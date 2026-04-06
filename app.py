@@ -42,21 +42,33 @@ html, body, [data-testid="stAppViewContainer"], .stApp {
     border: 1px solid #dddddd;
     border-radius: 14px;
     padding: 16px 18px 14px 18px;
-    min-height: 118px;
+    /* Changed to fixed height to ensure alignment */
+    height: 150px; 
+    display: flex;
+    flex-direction: column;
 }
+
 .kpi-label {
     font-size: 0.92rem;
     color: #666666;
-    margin-bottom: 14px;
+    margin-bottom: 4px;
+    /* Force all labels to take up 2 lines of space */
+    height: 40px; 
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
 }
+
 .kpi-value {
     font-size: 2rem;
     font-weight: 700;
     color: #111111;
     line-height: 1.1;
+    margin-top: auto; /* Pushes value and sub-text to the bottom */
 }
+
 .kpi-sub {
-    margin-top: 10px;
+    margin-top: 4px;
     font-size: 0.82rem;
     color: #888888;
 }
@@ -155,7 +167,7 @@ c1, c2, c3, c4 = st.columns(4)
 with c1:
     st.markdown(f"""
     <div class="kpi-card">
-        <div class="kpi-label">U.S. median homeowner burden</div>
+        <div class="kpi-label">U.S.  homeowner burden</div>
         <div class="kpi-value">{us_latest['homeowner_affordability']:.1f}%</div>
         <div class="kpi-sub">National benchmark</div>
     </div>
