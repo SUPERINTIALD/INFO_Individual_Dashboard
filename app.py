@@ -394,7 +394,7 @@ fig2.add_annotation(
 fig2.update_layout(
     title=dict(
         text=
-             "<sup>Values represent the median across all metros in each state.</sup>",
+             "<sup>Values represent the median across all metros in each state, compared against the U.S. national median.</sup>",
         x=0,
         xanchor='left',
         font=dict(size=18, color="black")
@@ -417,14 +417,15 @@ fig2.update_layout(
         showline=True,
         linecolor='black'
     ),
-    legend=dict(
-        orientation="h",
-        yanchor="bottom",
-        y=1.02,
-        xanchor="left",
-        x=0,
-        font=dict(color="black")
-    )
+    showlegend=False,
+    # legend=dict(
+    #     orientation="h",
+    #     yanchor="bottom",
+    #     y=1.02,
+    #     xanchor="left",
+    #     x=0,
+    #     font=dict(color="black")
+    # )
 )
 
 st.plotly_chart(fig2, use_container_width=True, theme=None)
